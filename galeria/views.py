@@ -1,13 +1,9 @@
 from django.shortcuts import render
 
-def index(request):
+from galeria.models import Fotografia
 
-    dados = {
-        1: {"nome":"Nebulosa de Carina",
-            "legenda":"webbtelescope.org / NASA / James Webb"},
-        2: {"nome":"Galáxia NGC 1079",
-            "legenda":"nasa.org / NASA / Hubble"}
-    }
+def index(request):
+    fotografias = Fotografia.obhects.all()
 
     return render(request, 'galeria/index.html', {"cards": dados})
 
