@@ -3,7 +3,7 @@ from django.shortcuts import render
 from galeria.models import Fotografia
 
 def index(request):
-    fotografias = Fotografia.obhects.all()
+    fotografias = Fotografia.objects.all()
 
     return render(request, 'galeria/index.html', {"cards": fotografias})
 
