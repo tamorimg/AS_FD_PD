@@ -5,7 +5,7 @@ from galeria.models import Fotografia
 def index(request):
     fotografias = Fotografia.obhects.all()
 
-    return render(request, 'galeria/index.html', {"cards": dados})
+    return render(request, 'galeria/index.html', {"cards": fotografias})
 
 def imagem(request):
     return render(request, 'galeria/imagem.html')
